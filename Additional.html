@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Activity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="wts.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+</head>
+<body>
+  <audio id="points" src="cheers.mp3"></audio>
+  <audio id="fail" src="fail.mp3"></audio>
+
+  <div class="header" style="width:100%; background-color:rgba(255, 255, 255, 0)">
+    <img src="Logo.png" width="12%" style="float:left; margin-top:10px" class="img-responsive">
+    <span> <img src="header.png" width="50%" height="100px"; class="img-responsive"></span>
+  </div>
+  <br>
+  <br>
+    <center>
+      <div class ="container">
+        <h3 id="story"> What is the place value of 9 in the number 469817 </h3>
+        <img src="a.jpg" class="img-responsive" width="200">
+
+    <br> <br>
+
+  <span> Enter the number:</span> 
+  <input id ="input1" class="inputnum1" type="number" placeholder="place value"> 
+ 
+  <br><br>
+  <button id="subbtn" class="btn btn-success" onclick="checkAnswer()">Submit Answer</button>
+  
+  <p id="compliment" class="comm"></p>
+  <hr>
+
+  <h3 id="story">Q1. Write 3 integers that come on the left of -3</h3>
+  <img src="a1.jpg" class="img-responsive" width="200" height="200">
+
+  <br> <br>
+
+<span> Enter The numbers:</span>
+<input id ="input4" class="inputnum1" type="number" placeholder="first num"> 
+<input id ="input5" class="inputnum2" type="number" placeholder="second num"> 
+<input id ="input6" class="inputnum3" type="number" placeholder="third num">
+<br>
+<br>
+<button id="subbtn" class="btn btn-success" onclick="checkAnswer1()">Submit Answer</button>
+
+<p id="compliment1" class="comm"></p>
+<hr>
+
+<h3 id="story">Q2. Write 3 integers that are immediately on the right of -6</h3>
+<img src="a2.jpg" class="img-responsive" width="200" height="200">
+
+<br> <br>
+
+<span> Enter The numbers:</span>
+<input id ="input7"class="inputnum1" type="number" placeholder="first num"> 
+<input id ="input8"class="inputnum2" type="number" placeholder="second num"> 
+<input id ="input9"class="inputnum3" type="number" placeholder="third num">
+<br>
+<br>
+<button id="subbtn" class="btn btn-success" onclick="checkAnswer2()">Submit Answer</button>
+
+<p id="compliment2" class="comm"></p>
+<hr>
+
+
+<h3 id="story"> Q3. Write 3 integers that come on the left of -20</h3>
+<img src="a3.jpg" class="img-responsive" width="200" height="200">
+
+<br> <br>
+
+<span> Enter The numbers:</span>
+<input id ="input10" class="inputnum1" type="number" placeholder="first num"> 
+<input id ="input11" class="inputnum2" type="number" placeholder="second num"> 
+<input id ="input12" class="inputnum3" type="number" placeholder="third num">
+<br>
+<br>
+<button id="subbtn" class="btn btn-success" onclick="checkAnswer3()">Submit Answer</button>
+
+<p id="compliment3" class="comm"></p>
+<hr>
+
+<h3 id="story"> Q4. Write 3 integers that are greater than -17</h3>
+<img src="a4.jpg" class="img-responsive" width="200" height="200">
+
+<br> <br>
+
+<span> Enter The numbers:</span>
+<input id ="input13" class="inputnum1" type="number" placeholder="first num"> 
+<input id ="input14" class="inputnum2" type="number" placeholder="second num"> 
+<input id ="input15" class="inputnum3" type="number" placeholder="third num">
+<br>
+<br>
+<button id="subbtn" class="btn btn-success" onclick="checkAnswer4()">Submit Answer</button>
+
+<p id="compliment4" class="comm"></p>
+<hr>
+
+<h3 id="story"> Q5. Write 3 integers that are smaller than -17</h3>
+<img src="a5.jpg" class="img-responsive" width="200" height="200">
+
+<br> <br>
+
+<span> Enter The numbers:</span>
+<input id ="input16" class="inputnum1" type="number" placeholder="first num"> 
+<input id ="input17" class="inputnum2" type="number" placeholder="second num"> 
+<input id ="input18" class="inputnum3" type="number" placeholder="third num">
+<br>
+<br>
+<button id="subbtn" class="btn btn-success" onclick="checkAnswer5()">Submit Answer</button>
+
+<p id="compliment5" class="comm"></p>
+<hr>
+   
+  </div>
+</center>
+  <br>
+  <br>
+  <br>
+  <br>
+   <footer style="background-color:antiquewhite; font-size:20px;">Copyright: Way to Succeed Classes <img src="Logo.png" width="70"></footer>
+   
+   <script>
+      function checkAnswer(){
+        a= document.getElementById("input1").value;
+        if(a=="9000"){
+          document.getElementById("compliment").innerHTML= "Well Done &#128512"
+          document.getElementById("points").play();
+        }
+        else{
+          document.getElementById("compliment").innerHTML= "Think Again &#128533"
+          document.getElementById("fail").play();
+        }
+      }
+
+      function checkAnswer1(){
+        a= Number(document.getElementById("input4").value);
+        b= Number(document.getElementById("input5").value);
+        c= Number(document.getElementById("input6").value);
+
+        if(a<= -3 && b <= -3 && c<=-3){
+          if(a!=b && b!=c){
+          document.getElementById("compliment1").innerHTML= "Well Done &#128512"
+          document.getElementById("points").play();
+        }
+        else{
+          document.getElementById("compliment1").innerHTML= "All three should be different numbers &#128523"
+          document.getElementById("fail").play();
+        }
+      }
+        else{
+          document.getElementById("compliment1").innerHTML= "Think Again &#128533"
+          document.getElementById("fail").play();
+        }
+      }
+
+      function checkAnswer2(){
+        a= Number(document.getElementById("input7").value);
+        b= Number(document.getElementById("input8").value);
+        c= Number(document.getElementById("input9").value);
+
+        if(a> -6 && b > -6 && c> -6){
+          if(a!=b && b!=c){
+          document.getElementById("compliment2").innerHTML= "Well Done &#128512"
+          document.getElementById("points").play();
+        }
+        else{
+          document.getElementById("compliment2").innerHTML= "All three should be different numbers &#128523"
+          document.getElementById("fail").play();
+        }
+      }
+        else{
+          document.getElementById("compliment2").innerHTML= "Think Again &#128533"
+          document.getElementById("fail").play();
+        }
+      }
+
+      function checkAnswer3(){
+        a= Number(document.getElementById("input10").value);
+        b= Number(document.getElementById("input11").value);
+        c= Number(document.getElementById("input12").value);
+
+        if(a< -20 && b < -20 && c<-20){
+          if(a!=b && b!=c){
+          document.getElementById("compliment3").innerHTML= "Well Done &#128512"
+          document.getElementById("points").play();
+        }
+        else{
+          document.getElementById("compliment3").innerHTML= "All three should be different numbers &#128523"
+          document.getElementById("fail").play();
+        }
+      }
+        else{
+          document.getElementById("compliment3").innerHTML= "Think Again &#128533"
+          document.getElementById("fail").play();
+        }
+      }
+
+      function checkAnswer4(){
+        a= Number(document.getElementById("input13").value);
+        b= Number(document.getElementById("input14").value);
+        c= Number(document.getElementById("input15").value);
+
+        if(a> -17 && b > -17 && c >-17){
+          if(a!=b && b!=c){
+          document.getElementById("compliment4").innerHTML= "Well Done &#128512"
+          document.getElementById("points").play();
+        }
+        else{
+          document.getElementById("compliment4").innerHTML= "All three should be different numbers &#128523"
+          document.getElementById("fail").play();
+        }
+      }
+        else{
+          document.getElementById("compliment4").innerHTML= "Think Again &#128533"
+          document.getElementById("fail").play();
+        }
+      }
+
+      function checkAnswer5(){
+        a= Number(document.getElementById("input16").value);
+        b= Number(document.getElementById("input17").value);
+        c= Number(document.getElementById("input18").value);
+
+        if(a< -17 && b < -17 && c<-17){
+          if(a!=b && b!=c){
+          document.getElementById("compliment5").innerHTML= "Well Done &#128512"
+          document.getElementById("points").play();
+        }
+        else{
+          document.getElementById("compliment5").innerHTML= "All three should be different numbers &#128523"
+          document.getElementById("fail").play();
+        }
+      }
+        else{
+          document.getElementById("compliment5").innerHTML= "Think Again &#128533"
+          document.getElementById("fail").play();
+        }
+      }
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>G7_c3 Class Activity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="wts.css">
+  <link rel="icon" type="image/x-icon" href="Logo_last.png">
+</head>
+<body>
+  <audio id="cheers" >
+    <source src="cheers.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="points" src="Points.mp3"></audio>
+  <audio id="fail" src="fail.mp3"></audio>
+<div class="header" style="width:100%; background-color:rgba(255, 255, 255, 0)">
+   <img src="Logo.png" width="12%" style="float:left; margin-top:10px" class="img-responsive">
+   <span> <img src="header.png" width="50%" height="100px"; class="img-responsive"></span>
+</div>
+<br>
+<br>
+  <center>
+  <h1 id="heading">Integers Multiplication And Division &#129488</h1>
+  <div class="maindiv container">
+  
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 imgdiv"><img id ="math_ques" src="MAth Question.jpg" width="95%" height="90%"></div>
+  <div id="questiondiv" class="col-lg-7 col-md-7 col-sm-7 col-xs-8">
+    <div id="question"></div>
+    <br><br><br>
+  <div class="menu"><br><ul id="options"></ul></div>
+  <button id="subbtn" class="btn btn-success" onclick="checkAnswer()">Submit Answer</button>
+  <button id="nextbtn" class="btn btn-primary" onclick="newques()" style="display:none">Next</button>
+  <p id="result"></p>
+  </div>
+</div>
+  <script>
+    // Define an array of questions and their options
+    var questions = [
+     {
+        question: "Q1. Calculate -17 X (-10)",
+        options: ["170", "-170", "-7", "27"],
+        answer: "170"
+
+      },
+
+      {
+        question: "Q2. Calculate 25 X (-15)",
+        options: ["-40", "375", "15", "-375"],
+        answer: "-375"
+
+      },
+
+      {
+        question: "Q3. Calculate 231 X (-5)",
+        options: ["1155", "226", "-1155", "-226"],
+        answer: "-1155"
+
+      },
+
+      {
+        question: "Q4. Calculate -58 X (6)",
+        options: ["-52", "348", "-348", "52"],
+        answer: "-348"
+
+      },
+
+      {
+        question: "Q5. Calculate -65 X (-4)",
+        options: ["-260", "61", "260", "-69"],
+        answer: "260"
+
+      },
+
+      {
+        question: "Q6. Calculate -34 X (-7)",
+        options: ["-238", "41", "238", "-27"],
+        answer: "238"
+
+      },
+
+      {
+        question: "Q7. Calculate -327 X (5)",
+        options: ["-1635", "-333", "1635", "322"],
+        answer: "-1635"
+
+      },
+
+      {
+        question: "Q8. Calculate -1424 &#247 (4)",
+        options: ["356", "1420", "-356", "-1428"],
+        answer: "-356"
+
+      },
+
+      {
+        question: "Q9. Calculate 546 &#247 (-6)",
+        options: ["91", "552", "-91", "-552"],
+        answer: "-91"
+
+      },
+
+      {
+        question: "Q10. Calculate -755 &#247 (-5)",
+        options: ["760", "-151", "-760", "151"],
+        answer: "151"
+
+      },
+
+      {
+        question: "Q11. Calculate 368 &#247 (-2)",
+        options: ["184", "367", "-184", "-370"],
+        answer: "-184"
+
+      },
+
+      {
+        question: "Q12. Calculate -1092 &#247 (-3)",
+        options: ["1095", "364", "-1095", "-364"],
+        answer: "364"
+
+      },
+
+      {
+        question: "Q13. Calculate -242 &#247 (11)",
+        options: ["22", "253", "-22", "-253"],
+        answer: "-22"
+
+      },
+      {
+        question: "Q14. Calculate -280 &#247 (-8)",
+        options: ["-296", "35", "-35", "-272"],
+        answer: "35"
+
+      },
+
+      {
+        question: "Q15. Calculate -255 &#247 (5)",
+        options: ["51", "-250", "-260", "-51"],
+        answer: "-51"
+
+      },
+
+
+
+      
+      // Add more questions here
+    ];
+
+    //define the array of images
+
+    var img= ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg", "11.jpg", "12.jpg", "13.jpg", "14.jpg", "15.jpg", "16.jpg", "17.jpg", "18.jpg", "19.jpg", "20.jpg", "21.jpg","22.jpg", "23.jpg", "24.jpg", "25.jpg"]
+    
+    // Get a random question from the array
+
+    var randomQuestion = questions[0];
+    var updatedimage = img[0]
+    document.getElementById("math_ques").src = updatedimage
+    document.getElementById("question").innerHTML = randomQuestion.question;
+    
+    randomQuestion.options.forEach(function(option) {
+      var li = document.createElement("li");
+      li.innerHTML = '<input type="radio" name="answer" value="' + option + '"> ' + option;
+      document.getElementById("options").appendChild(li);
+    });
+
+// Create a function here like family array project of Byjus to display next question \
+    // from array everytime instead of random question
+    var i=1;
+    var count=questions.length
+    function newques(){
+      if(i==count){
+        document.getElementById("heading").innerHTML = "Thank You...."
+        document.getElementById("math_ques").src = "last.png"
+        document.getElementById("question").innerHTML=""
+        document.getElementById("options").innerHTML="Well Done"
+        document.getElementById("cheers").play()
+      document.getElementById("result").innerHTML ="Click on the link to practice more <a href='Additional.html'>Practice More </a>"
+      document.getElementById("nextbtn").style.display="none"
+      }
+      else{
+
+      document.getElementById("options").innerHTML=""
+      document.getElementById("result").innerHTML =""
+      
+  
+      updatedimage= img[i]
+      document.getElementById("math_ques").src = updatedimage
+
+// Display the question and options on the page
+      randomQuestion = questions[i];    
+    document.getElementById("question").innerHTML = randomQuestion.question;
+    
+    
+    randomQuestion.options.forEach(function(option) {
+      var li = document.createElement("li");
+      li.innerHTML = '<input type="radio" name="answer" value="' + option + '"> ' + option;
+      document.getElementById("options").appendChild(li);
+    });
+    document.getElementById("subbtn").style.display="inline-block"
+        document.getElementById("nextbtn").style.display="none"
+
+    i++;
+    }
+  }
+    
+    
+    // Check the selected answer against the correct answer
+    function checkAnswer() {
+      var selectedAnswer = document.querySelector('input[name="answer"]:checked').value;
+      if (selectedAnswer === randomQuestion.answer) {
+        document.getElementById("result").innerHTML = "Correct! &#128512" ;
+        document.getElementById("points").play();
+        document.getElementById("subbtn").style.display="none"
+        document.getElementById("nextbtn").style.display="inline-block"
+      } else {
+        document.getElementById("result").innerHTML = "Incorrect! &#128542";
+        document.getElementById("fail").play();
+      }
+    }
+  </script>
+</center>
+</body>
+</html>
